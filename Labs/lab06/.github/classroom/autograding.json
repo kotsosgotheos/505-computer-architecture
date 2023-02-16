@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "autograding",
+      "setup": "javac -cp munit.jar Lab03TestPalindrome.java",
+      "run": "java -jar munit.jar lab03.asm Lab03TestPalindrome.class",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": null
+    }
+  ]
+}

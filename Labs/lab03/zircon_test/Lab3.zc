@@ -1,0 +1,28 @@
+#import "Object"
+
+object Lab3 implements Object {
+    fields {}
+
+    (char*) self |> "deref" |> (void*): A, (int): index |> return ((char**)A)[index];
+
+    (int) self |> "strcmp" |> (char*): p1, (char*): p2 |> {
+        if(*p1 == '\0' || *p1 != *p2)
+            return *p1 - *p2;
+        self "strcmp" (p1 + 1), (p2 + 1);
+    }
+
+    (int) self |> "binary search" |> (void*): A, (int): left, (int): right, (char*): x |> {
+        int mid = left + (right-left) / 2;
+
+        if(left > right)
+            return 0;
+
+        int res = self "strcmp" x, (self "deref" A, mid);
+        if(res == 0)
+            return mid;
+        if(res < 0)
+            return self "binary search" A, left, mid - 1, x;
+        else
+            return self "binary search" A, mid + 1, right, x;
+    }
+}

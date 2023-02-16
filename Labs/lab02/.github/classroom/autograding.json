@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "test lab02",
+      "setup": "javac -cp munit.jar Lab02TestBSearch.java",
+      "run": "java -jar munit.jar lab02.asm Lab02TestBSearch.class",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": null
+    }
+  ]
+}
